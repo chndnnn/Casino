@@ -1,8 +1,10 @@
+import Home from "./Screens/Home";
+
 function App() {
   return (
-    <>
-      <span className="text-red-500">Hii</span>
-    </>
+    <div className="min-h-screen bg-black">
+      <Home />
+    </div>
   );
 }
 
