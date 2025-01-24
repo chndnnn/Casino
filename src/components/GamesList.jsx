@@ -1,53 +1,50 @@
-import image1 from "./../../public/Cas1.jpg";
-import image2 from "./../../public/cas2.jpg";
-import image3 from "./../../public/cas3.jpg";
-import image4 from "./../../public/cas4.jpg";
-import image5 from "./../../public/cas5.jpg";
-import image6 from "./../../public/cas6.jpg";
-import image7 from "./../../public/cas7.jpg";
 import { GoDotFill } from "react-icons/go";
 import { FaArrowLeft } from "react-icons/fa";
 import { FaArrowRight } from "react-icons/fa";
 import { useEffect, useState } from "react";
+import { mainState } from "../../context/mainContext";
 
-const GamesList = ({ name }) => {
+const GamesList = ({ name, data = [], show = false }) => {
   const [count, setCount] = useState({ start: 0, end: 10 });
   const [itemsPerPage, setItemsPerPage] = useState(10);
+  const { user, isOpen, setIsOpen } = mainState();
+  const { setShowPopup } = mainState();
 
-  const games = [
-    { image: image1 },
-    { image: image2 },
-    { image: image3 },
-    { image: image4 },
-    { image: image5 },
-    { image: image6 },
-    { image: image7 },
-    { image: image1 },
-    { image: image2 },
-    { image: image3 },
-    { image: image4 },
-    { image: image5 },
-    { image: image6 },
-    { image: image7 },
-    { image: image1 },
-    { image: image2 },
-    { image: image3 },
-    { image: image4 },
-    { image: image5 },
-    { image: image6 },
-  ];
+  function onGameClick() {
+    if (!user) {
+      setIsOpen(true);
+    } else {
+      setShowPopup(true);
+    }
+  }
 
   useEffect(() => {
     const handleResize = () => {
-      console.log(window.innerWidth);
       if (window.innerWidth < 768) {
-        setItemsPerPage(4); // Show 4 items on mobile
-        setCount((prev) => ({
-          ...prev,
-          end: 4,
-        }));
+        if (show) {
+          setItemsPerPage(8); // Show 4 items on mobile
+          setCount((prev) => ({
+            ...prev,
+            end: 8,
+          }));
+        } else {
+          setItemsPerPage(4); // Show 4 items on mobile
+          setCount((prev) => ({
+            ...prev,
+            end: 4,
+          }));
+        }
       } else {
-        setItemsPerPage(10); // Show 10 items on larger screens
+        if (show) {
+          setItemsPerPage(20); // Show 4 items on mobile
+          setCount((prev) => ({
+            ...prev,
+            end: 20,
+          }));
+        } else {
+          setItemsPerPage(10);
+        }
+        // Show 10 items on larger screens
       }
     };
 
@@ -55,11 +52,11 @@ const GamesList = ({ name }) => {
     window.addEventListener("resize", handleResize);
 
     return () => window.removeEventListener("resize", handleResize);
-  }, []);
+  }, [name]);
 
   // Handle right arrow click
   const handleNext = () => {
-    if (count.end < games.length) {
+    if (count.end < data.length) {
       setCount((prev) => ({
         start: prev.start + itemsPerPage,
         end: prev.end + itemsPerPage,
@@ -93,7 +90,7 @@ const GamesList = ({ name }) => {
           </div>
           <div
             className={`bg-neutral-800 p-1 rounded cursor-pointer ${
-              count.end >= games.length ? "opacity-50 cursor-not-allowed" : ""
+              count.end >= data.length ? "opacity-50 cursor-not-allowed" : ""
             }`}
             onClick={handleNext}
           >
@@ -106,8 +103,11 @@ const GamesList = ({ name }) => {
           </div>
         </div>
       </div>
-      <div className=" h-28  grid md:grid-cols-10 grid-cols-4 gap-2">
-        {games.slice(count.start, count.end).map((ele, index) => (
+      <div
+        onClick={onGameClick}
+        className=" h-28  grid md:grid-cols-10 grid-cols-4 gap-2 cursor-pointer"
+      >
+        {data.slice(count.start, count.end).map((ele, index) => (
           <div key={index} className="w-full h-28">
             <img
               src={ele.image}

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { FaWhatsapp } from "react-icons/fa";
 import {
   MdOutlineComputer,
@@ -13,12 +13,18 @@ import { IoAmericanFootballSharp } from "react-icons/io5";
 import { FaPlane } from "react-icons/fa";
 import { MdCasino } from "react-icons/md";
 import { FaTelegram } from "react-icons/fa";
-import image from "./../../public/Cas1.jpg";
+import PopupLogin from "./Login";
+import { mainState } from "../../context/mainContext";
 
 const Nav = () => {
   const now = new Date();
   const [menuOpen, setMenuOpen] = useState(false);
+  let { user, setUser } = mainState();
 
+  useEffect(() => {
+    let data = localStorage.getItem("token");
+    setUser(data);
+  }, []);
   const colors = [
     "#ff00ff", // Neon Pink
     "#00ffff", // Cyan
@@ -49,6 +55,11 @@ const Nav = () => {
     setMenuOpen(!menuOpen);
   };
 
+  function onlogoutClick() {
+    localStorage.removeItem("token");
+    setUser("");
+  }
+
   return (
     <div className="w-full md:h-20 h-10 md:border-b border-b-2 border-blue-500">
       <div className=""></div>
@@ -75,7 +86,9 @@ const Nav = () => {
             <FaWhatsapp />
           </div>
           <div className=" bg-blue-600 p-1 rounded text-white justify-center items-center">
-            <FaUser />
+            <PopupLogin>
+              <FaUser />
+            </PopupLogin>
           </div>
         </div>
         {/* Desktop Icons */}
@@ -89,10 +102,26 @@ const Nav = () => {
             <IoIosLogOut />
             Girls
           </div>
-          <div className="flex bg-blue-600 p-1 rounded text-white justify-center items-center">
-            <FaUser />
-            Kavit
-          </div>
+          <PopupLogin>
+            <div
+              className={`flex bg-gradient-to-r from-blue-800 to-blue-950 p-1 rounded text-white justify-center items-center ${
+                user && "cursor-not-allowed"
+              } `}
+            >
+              <FaUser />
+
+              {user ? user : "login"}
+            </div>
+          </PopupLogin>
+          {user && (
+            <div
+              onClick={onlogoutClick}
+              className="flex bg-gradient-to-r cursor-pointer from-red-800 to-red-950 p-1 rounded text-white justify-center items-center"
+            >
+              <IoIosLogOut />
+              logout
+            </div>
+          )}
         </div>
       </div>
 
