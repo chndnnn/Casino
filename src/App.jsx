@@ -1,10 +1,13 @@
+import MainContextProvider from "../context/mainContext";
 import Home from "./Screens/Home";
 
 function App() {
   return (
-    <div className="min-h-screen bg-black">
-      <Home />
-    </div>
+    <MainContextProvider>
+      <div className="min-h-screen bg-black">
+        <Home />
+      </div>
+    </MainContextProvider>
   );
 }
 
