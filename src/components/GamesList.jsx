@@ -105,10 +105,10 @@ const GamesList = ({ name, data = [], show = false }) => {
       </div>
       <div
         onClick={onGameClick}
-        className=" h-28  grid md:grid-cols-10 grid-cols-4 gap-2 cursor-pointer"
+        className=" h-32  grid md:grid-cols-10 grid-cols-4 gap-2 cursor-pointer"
       >
         {data.slice(count.start, count.end).map((ele, index) => (
-          <div key={index} className="w-full h-28">
+          <div key={index} className="w-full h-32">
             <img
               src={ele.image}
               alt=""

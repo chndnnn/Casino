@@ -98,13 +98,13 @@ const Nav = () => {
 
           <MdDateRange className="text-xl text-yellow-400" />
           <span className="text-neutral-400">{now.toLocaleString()}</span>
-          <div className="flex bg-neutral-800 p-1 rounded text-white justify-center items-center">
+          <div className="flex bg-gradient-to-b gap-1 cursor-pointer from-neutral-700 to-neutral-800 p-1 rounded text-white justify-center items-center">
             <IoIosLogOut />
             Girls
           </div>
           <PopupLogin>
             <div
-              className={`flex bg-gradient-to-r from-blue-800 to-blue-950 p-1 rounded text-white justify-center items-center ${
+              className={`flex bg-gradient-to-r gap-1 from-blue-800 to-blue-950 p-1 rounded text-white justify-center items-center ${
                 user && "cursor-not-allowed"
               } `}
             >
