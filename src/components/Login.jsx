@@ -1,13 +1,20 @@
 import { useEffect, useState } from "react";
-import { FaUser, FaLock } from "react-icons/fa";
+import { FaUser, FaLock, FaEye, FaEyeSlash } from "react-icons/fa";
 import { loginData } from "../../helpers/logindata";
 import { mainState } from "../../context/mainContext";
 
 const PopupLogin = ({ children }) => {
   const { isOpen, setIsOpen } = mainState();
   const [formData, setFormData] = useState({ username: "", password: "" });
+  const [invalid, setInvalid] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
   let { user, setUser } = mainState();
   let data = loginData;
+
+  function clearData() {
+    setFormData({ username: "", password: "" });
+    setInvalid(false);
+  }
 
   const togglePopup = () => {
     if (!user) {
@@ -17,6 +24,7 @@ const PopupLogin = ({ children }) => {
 
   const closPopUp = () => {
     setIsOpen(false);
+    clearData();
   };
 
   const handleChange = (e) => {
@@ -32,9 +40,11 @@ const PopupLogin = ({ children }) => {
     if (login.length > 0) {
       localStorage.setItem("token", formData.username);
       setUser(formData.username);
+      setInvalid(false);
       setIsOpen(false);
+      clearData();
     } else {
-      console.log("Invalid");
+      setInvalid(true);
     }
   };
 
@@ -64,15 +74,23 @@ const PopupLogin = ({ children }) => {
               <div className="relative">
                 <FaLock className="absolute left-3 top-3 text-gray-400" />
                 <input
-                  type="password"
+                  type={showPassword ? "text" : "password"}
                   name="password"
                   placeholder="Password"
                   value={formData.password}
                   onChange={handleChange}
-                  className="w-full pl-10 pr-4 py-2 bg-neutral-800 border border-neutral-700 rounded focus:ring-2 focus:ring-purple-600 outline-none"
+                  className="w-full pl-10 pr-10 py-2 bg-neutral-800 border border-neutral-700 rounded focus:ring-2 focus:ring-purple-600 outline-none"
                   required
                 />
+                <span
+                  className="absolute right-3 top-3 cursor-pointer text-gray-400 hover:text-white"
+                  onClick={() => setShowPassword(!showPassword)}
+                >
+                  {showPassword ? <FaEyeSlash /> : <FaEye />}
+                </span>
               </div>
+
+              {invalid && <span className="text-red-500">Invalid Cred!!</span>}
 
               <button
                 type="submit"
