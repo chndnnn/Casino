@@ -15,11 +15,14 @@ import { MdCasino } from "react-icons/md";
 import { FaTelegram } from "react-icons/fa";
 import PopupLogin from "./Login";
 import { mainState } from "../../context/mainContext";
+import { CiLogin } from "react-icons/ci";
+import { RiLoginCircleFill } from "react-icons/ri";
+import DropDown from "./DropDown";
 
 const Nav = () => {
   const now = new Date();
   const [menuOpen, setMenuOpen] = useState(false);
-  let { user, setUser } = mainState();
+  let { setIsOpen, user, setUser } = mainState();
 
   useEffect(() => {
     let data = localStorage.getItem("token");
@@ -55,6 +58,11 @@ const Nav = () => {
     setMenuOpen(!menuOpen);
   };
 
+  function onLonginCLick() {
+    console.log("hii");
+    setIsOpen(true);
+  }
+
   function onlogoutClick() {
     localStorage.removeItem("token");
     setUser("");
@@ -86,9 +94,13 @@ const Nav = () => {
             <FaWhatsapp />
           </div>
           <div className=" bg-blue-600 p-1 rounded text-white justify-center items-center">
-            <PopupLogin>
-              <FaUser />
-            </PopupLogin>
+            <PopupLogin />
+            {/* {user ? <FaUser /> : <RiLoginCircleFill onClick={onLonginCLick} />} */}
+            {user ? (
+              <DropDown />
+            ) : (
+              <RiLoginCircleFill onClick={onLonginCLick} />
+            )}
           </div>
         </div>
         {/* Desktop Icons */}

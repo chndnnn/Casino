@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { FaUser, FaLock, FaEye, FaEyeSlash } from "react-icons/fa";
 import { loginData } from "../../helpers/logindata";
 import { mainState } from "../../context/mainContext";
@@ -18,7 +18,7 @@ const PopupLogin = ({ children }) => {
 
   const togglePopup = () => {
     if (!user) {
-      setIsOpen(!isOpen);
+      setIsOpen(true);
     }
   };
 
@@ -49,11 +49,11 @@ const PopupLogin = ({ children }) => {
   };
 
   return (
-    <div className="flex items-center justify-center bg-black">
+    <div className="flex items-center justify-center bg-black ">
       <button onClick={togglePopup}>{children}</button>
 
       {isOpen && (
-        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-60">
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-60 z-10">
           <div className="bg-neutral-900 text-white p-8 rounded-lg shadow-lg w-full max-w-sm relative">
             <h2 className="text-2xl font-semibold text-center mb-6">Login</h2>
 
