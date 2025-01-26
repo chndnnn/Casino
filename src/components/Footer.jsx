@@ -9,8 +9,8 @@ const Footer = () => {
             </div>
 
             <p className="mt-4 max-w-xs text-white">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse non
-              cupiditate quae nam molestias.
+              Experience the thrill of winning with our cutting-edge casino
+              app—where excitement meets endless possibilities!
             </p>
 
             <ul className="mt-8 flex gap-6">
@@ -132,185 +132,63 @@ const Footer = () => {
             </ul>
           </div>
 
-          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:col-span-2 lg:grid-cols-4">
+          <div className="grid md:grid-cols-1 grid-cols-2 gap-8 sm:grid-cols-2 lg:col-span-2 lg:grid-cols-4">
             <div>
               <p className="font-medium text-white">Services</p>
 
-              <ul className="mt-6 space-y-4 text-sm">
-                <li>
-                  <a
-                    href="#"
-                    className="text-white transition hover:opacity-75"
-                  >
-                    {" "}
-                    1on1 Coaching{" "}
-                  </a>
-                </li>
+              <ul className="mt-6 space-y-4 text-sm text-white">
+                <li>1on1 Coaching</li>
 
-                <li>
-                  <a
-                    href="#"
-                    className="text-white transition hover:opacity-75"
-                  >
-                    {" "}
-                    Company Review{" "}
-                  </a>
-                </li>
+                <li>Company Review</li>
 
-                <li>
-                  <a
-                    href="#"
-                    className="text-white transition hover:opacity-75"
-                  >
-                    {" "}
-                    Accounts Review{" "}
-                  </a>
-                </li>
+                <li>Accounts Review</li>
 
-                <li>
-                  <a
-                    href="#"
-                    className="text-white transition hover:opacity-75"
-                  >
-                    {" "}
-                    HR Consulting{" "}
-                  </a>
-                </li>
+                <li>HR Consulting</li>
 
-                <li>
-                  <a
-                    href="#"
-                    className="text-white transition hover:opacity-75"
-                  >
-                    {" "}
-                    SEO Optimisation{" "}
-                  </a>
-                </li>
+                <li>SEO Optimisation</li>
               </ul>
             </div>
+            <div>
+              <p className="font-medium text-white">Legal</p>
 
+              <ul className="mt-6 space-y-4 text-sm text-white">
+                <li>Accessibility</li>
+
+                <li>Returns Policy</li>
+
+                <li>Refund Policy</li>
+
+                <li>Hiring Statistics</li>
+              </ul>
+            </div>
             <div>
               <p className="font-medium text-white">Company</p>
 
-              <ul className="mt-6 space-y-4 text-sm">
-                <li>
-                  <a
-                    href="#"
-                    className="text-white transition hover:opacity-75"
-                  >
-                    {" "}
-                    About{" "}
-                  </a>
-                </li>
+              <ul className="mt-6 space-y-4 text-sm text-white">
+                <li>About</li>
 
-                <li>
-                  <a
-                    href="#"
-                    className="text-white transition hover:opacity-75"
-                  >
-                    {" "}
-                    Meet the Team{" "}
-                  </a>
-                </li>
+                <li>Meet the Team</li>
 
-                <li>
-                  <a
-                    href="#"
-                    className="text-white transition hover:opacity-75"
-                  >
-                    {" "}
-                    Accounts Review{" "}
-                  </a>
-                </li>
+                <li>Accounts Review</li>
               </ul>
             </div>
 
             <div>
               <p className="font-medium text-white">Helpful Links</p>
 
-              <ul className="mt-6 space-y-4 text-sm">
-                <li>
-                  <a
-                    href="#"
-                    className="text-white transition hover:opacity-75"
-                  >
-                    {" "}
-                    Contact{" "}
-                  </a>
-                </li>
+              <ul className="mt-6 space-y-4 text-sm text-white">
+                <li>Contact</li>
 
-                <li>
-                  <a
-                    href="#"
-                    className="text-white transition hover:opacity-75"
-                  >
-                    {" "}
-                    FAQs{" "}
-                  </a>
-                </li>
+                <li>FAQs</li>
 
-                <li>
-                  <a
-                    href="#"
-                    className="text-white transition hover:opacity-75"
-                  >
-                    {" "}
-                    Live Chat{" "}
-                  </a>
-                </li>
-              </ul>
-            </div>
-
-            <div>
-              <p className="font-medium text-white">Legal</p>
-
-              <ul className="mt-6 space-y-4 text-sm">
-                <li>
-                  <a
-                    href="#"
-                    className="text-white transition hover:opacity-75"
-                  >
-                    {" "}
-                    Accessibility{" "}
-                  </a>
-                </li>
-
-                <li>
-                  <a
-                    href="#"
-                    className="text-white transition hover:opacity-75"
-                  >
-                    {" "}
-                    Returns Policy{" "}
-                  </a>
-                </li>
-
-                <li>
-                  <a
-                    href="#"
-                    className="text-white transition hover:opacity-75"
-                  >
-                    {" "}
-                    Refund Policy{" "}
-                  </a>
-                </li>
-
-                <li>
-                  <a
-                    href="#"
-                    className="text-white transition hover:opacity-75"
-                  >
-                    {" "}
-                    Hiring Statistics{" "}
-                  </a>
-                </li>
+                <li>Live Chat</li>
               </ul>
             </div>
           </div>
         </div>
 
         <p className="text-xs text-white">
-          &copy; 2025. Company Name. All rights reserved.
+          &copy; 2025. EFES-BET. All rights reserved.
         </p>
       </div>
     </footer>

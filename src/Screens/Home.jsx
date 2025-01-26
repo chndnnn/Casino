@@ -1,4 +1,5 @@
 import { games } from "../../helpers/Data";
+import Carousal from "../components/Carousel";
 import Footer from "../components/Footer";
 import GamesList from "../components/GamesList";
 import GamesScreen from "../components/GamesScreen";
@@ -11,8 +12,9 @@ const Home = () => {
   return (
     <div className=" p-1">
       <Nav />
-      <div className="p-2 h-60">
-        <img src="./Cover.jpg" alt="" className="w-full h-full" />
+      <div className="p-2 h-60 overflow-hidden">
+        {/* <img src="./Cover.jpg" alt="" className="w-full h-full" /> */}
+        <Carousal />
       </div>
       <div className="p-2">
         <div className="h-48">
