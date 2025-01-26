@@ -3,7 +3,7 @@ import { Carousel } from "react-responsive-carousel";
 
 const Carousal = () => {
   return (
-    <div className=" w-full">
+    <div className="w-full">
       <Carousel
         infiniteLoop={true}
         showThumbs={false}
@@ -13,6 +13,9 @@ const Carousal = () => {
         interval={5000}
         transitionTime={1000}
         stopOnHover={false}
+        swipeable={true} // Enable swipe functionality
+        emulateTouch={true} // Improve touch experience
+        dynamicHeight={false}
       >
         <div className="h-full w-full">
           <img
