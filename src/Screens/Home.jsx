@@ -1,4 +1,4 @@
-import { games } from "../../helpers/Data";
+import { games, Poker } from "../../helpers/Data";
 import Carousal from "../components/Carousel";
 import Footer from "../components/Footer";
 import GamesList from "../components/GamesList";
@@ -9,6 +9,7 @@ import PromAndLastWinner from "../components/PromAndLastWinner";
 
 const Home = () => {
   let data = games;
+  let poker = Poker;
   return (
     <div className=" p-1">
       <Nav />
@@ -21,7 +22,7 @@ const Home = () => {
           <GamesList name={"Top Games"} data={data} />
         </div>
         <div className="h-48">
-          <GamesList name={"Jackpot Play"} data={data} />
+          <GamesList name={"Jackpot Play"} data={poker} />
         </div>
         <div className="h-96 border border-blue-500 rounded p-2 bg-blue-950">
           <GamesList name={"Live Games"} data={data} show={true} />
@@ -31,7 +32,7 @@ const Home = () => {
         <PromAndLastWinner />
       </div>
       <div className="h-96 border rounded p-2 bg-black">
-        <GamesList name={"Casino Oyu"} data={data} show={true} />
+        <GamesList name={"Casino Oyu"} data={poker} show={true} />
       </div>
       <GamesScreen />
       <Footer />

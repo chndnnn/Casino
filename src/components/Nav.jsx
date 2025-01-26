@@ -139,12 +139,15 @@ const Nav = () => {
 
       {/* Mobile Menu (Conditional Rendering) */}
       {menuOpen && (
-        <div className="md:hidden absolute top-11 left-0 w-full bg-neutral-800 shadow-lg p-4">
-          <div className=" grid grid-cols-3 gap-3">
+        <div className="md:hidden absolute top-11 left-0 w-full bg-gradient-to-bl from-blue-800 via-blue-950 to-blue-800 shadow-lg p-4 z-10">
+          <div className=" grid grid-cols-3 gap-3 ">
             {data.map((ele, index) => {
               const glowingColor = colors[index % colors.length];
               return (
-                <div className="bg-neutral-900 h-40 flex flex-col justify-center items-center gap-3 rounded-lg shadow-lg">
+                <div
+                  key={index}
+                  className="bg-gradient-to-b from-neutral-800 to-black h-40 flex flex-col justify-center items-center gap-3 rounded-lg  shadow-lg"
+                >
                   <span
                     className="text-neutral-400 rounded text-5xl"
                     style={{
@@ -165,8 +168,8 @@ const Nav = () => {
       )}
 
       <div className=" hidden md:flex w-full h-10 text-xs  items-center gap-6 justify-center ">
-        {data.map((ele) => (
-          <div className="flex items-center gap-2 cursor-pointer ">
+        {data.map((ele, i) => (
+          <div key={i} className="flex items-center gap-2 cursor-pointer ">
             <span className="text-neutral-400 bg-neutral-800 rounded p-1">
               {<ele.icons />}
             </span>
