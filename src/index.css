@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Thin scrollbar */
+::-webkit-scrollbar {
+  width: 6px; /* Adjust the width */
+}
+
+/* Track (background) */
+::-webkit-scrollbar-track {
+  background: #1a1a1a; /* Dark background color */
+}
+
+/* Handle (scroll thumb) */
+::-webkit-scrollbar-thumb {
+  background: #888; /* Gray handle */
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
