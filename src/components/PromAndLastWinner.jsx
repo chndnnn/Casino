@@ -12,7 +12,7 @@ const PromAndLastWinner = () => {
             className="h-full w-full object-cover rounded-md"
           />
           <img
-            src="./Cover2.jpg"
+            src="./Cover10.jpg"
             alt=""
             className="h-full w-full  rounded-md"
           />
