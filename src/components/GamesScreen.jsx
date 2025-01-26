@@ -7,7 +7,7 @@ const GamesScreen = () => {
   return (
     <div>
       {showPopup && (
-        <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex justify-center items-center">
+        <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex justify-center z-10 items-center">
           <div className="bg-neutral-800 p-2 rounded-lg shadow-lg w-[90%] h-[90%] flex flex-col  ">
             <div className="flex-1 bg-white">
               <iframe
