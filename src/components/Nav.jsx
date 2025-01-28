@@ -70,9 +70,8 @@ const Nav = () => {
 
   return (
     <div className="w-full md:h-20 h-10 md:border-b border-b-2 border-blue-500">
-      <div className=""></div>
       {/* Top Navbar */}
-      <div className="w-full h-10 flex justify-between items-center px-2 md:px-2">
+      <div className="w-full h-10 flex justify-between items-center px-2 md:px-8 ">
         <div className="h-[70%] w-[10%] hidden md:block">
           <img src="./logo2.jpg" alt="" className="h-full w-full rounded-md" />
         </div>
@@ -104,7 +103,7 @@ const Nav = () => {
           </div>
         </div>
         {/* Desktop Icons */}
-        <div className=" hidden md:flex items-center gap-4">
+        <div className=" hidden md:flex items-center  gap-4">
           <FaWhatsapp className="text-xl text-green-500" />
           <MdOutlineComputer className="text-xl text-red-500" />
 
