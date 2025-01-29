@@ -21,6 +21,17 @@ import DropDown from "./DropDown";
 
 const Nav = () => {
   const now = new Date();
+  const formattedDate = now.toLocaleDateString("en-US", {
+    month: "numeric",
+    day: "numeric",
+    year: "numeric",
+  });
+  const formattedTime = now.toLocaleTimeString("en-US", {
+    hour: "numeric",
+    minute: "numeric",
+    second: "numeric",
+    hour12: false, // 24-hour format
+  });
   const [menuOpen, setMenuOpen] = useState(false);
   let { setIsOpen, user, setUser } = mainState();
 
@@ -69,11 +80,11 @@ const Nav = () => {
   }
 
   return (
-    <div className="w-full md:h-20 h-10 md:border-b border-b-2 border-blue-500">
+    <div className="w-full md:h-32 md:py-3 md:px-5  h-10 md:border-b-[3px] border-b-2 border-[#09a9d9] bg-gradient-to-r from-[#141c1e] to-[#0b2c55]">
       {/* Top Navbar */}
-      <div className="w-full h-10 flex justify-between items-center px-2 md:px-8 ">
-        <div className="h-[70%] w-[10%] hidden md:block">
-          <img src="./logo2.jpg" alt="" className="h-full w-full rounded-md" />
+      <div className="w-full h-10 md:mb-5 flex  justify-between items-center px-2 md:px-8 ">
+        <div className="h-[70%] w-[10%] md:w-[12%] hidden md:block">
+          <img src="./logo2.jpg" alt="" className="h-full w-full rounded-sm" />
         </div>
 
         {/* ecclipse */}
@@ -103,19 +114,19 @@ const Nav = () => {
           </div>
         </div>
         {/* Desktop Icons */}
-        <div className=" hidden md:flex items-center  gap-4">
+        <div className=" hidden md:flex  items-center  gap-4 ">
           <FaWhatsapp className="text-xl text-green-500" />
           <MdOutlineComputer className="text-xl text-red-500" />
 
           <MdDateRange className="text-xl text-yellow-400" />
-          <span className="text-neutral-400">{now.toLocaleString()}</span>
-          <div className="flex bg-gradient-to-b gap-1 cursor-pointer from-neutral-700 to-neutral-800 p-1 rounded text-white justify-center items-center">
-            <IoIosLogOut />
-            Girls
+          <span className="text-neutral-400 text-sm">{`${formattedDate} ${formattedTime}`}</span>
+          <div className="flex bg-gradient-to-b gap-1 cursor-pointer from-neutral-700 to-neutral-700 p-2 rounded-sm text-white justify-center items-center">
+            <RiLoginCircleFill />
+            <span className="text-[11px] font-bold">GIRLS</span>
           </div>
           <PopupLogin>
             <div
-              className={`flex bg-gradient-to-r gap-1 from-blue-800 to-blue-950 p-1 rounded text-white justify-center items-center ${
+              className={`flex bg-gradient-to-r gap-1 from-blue-400 to-blue-400 p-1 px-3 rounded-sm text-white justify-center items-center ${
                 user && "cursor-not-allowed"
               } `}
             >
@@ -133,6 +144,9 @@ const Nav = () => {
               logout
             </div>
           )}
+          <div className="flex h-5 w-5 cursor-point rounded text-white justify-center items-center">
+            <img src="./china.png" alt="" className="w-full h-full" />
+          </div>
         </div>
       </div>
 
@@ -166,13 +180,17 @@ const Nav = () => {
         </div>
       )}
 
-      <div className=" hidden md:flex w-full h-10 text-xs  items-center gap-6 justify-center ">
+      <div className=" hidden md:flex   md:px-8  w-full h-10   items-center gap-6 ">
         {data.map((ele, i) => (
-          <div key={i} className="flex items-center gap-2 cursor-pointer ">
-            <span className="text-neutral-400 bg-neutral-800 rounded p-1">
+          <div key={i} className="flex items-center gap-1  cursor-pointer ">
+            <span
+              className={`text-neutral-400 text-[15px] ${
+                i == 2 && "bg-orange-500 text-white"
+              }   bg-neutral-800 rounded p-1`}
+            >
               {<ele.icons />}
             </span>
-            <span className="font-semibold text-white hover:text-red-500">
+            <span className=" text-[10px] font-bold text-neutral-100 hover:text-red-500">
               {ele.name.toUpperCase()}
             </span>
           </div>

@@ -18,26 +18,28 @@ const Carousal = () => {
         dynamicHeight={false}
       >
         <div className="h-full w-full">
-          <img
+          {/* <img
             src="./Hero slider.png"
             alt="Slide 1"
             className="h-60 md:h-96 w-full rounded-lg"
-          />
+          /> */}
+          <img src="./Hero slider.png" alt="Slide 1" className="rounded-lg" />
         </div>
         <div className="h-full w-full">
-          <img
+          {/* <img
             src="./Cover10.jpg"
             alt="Slide 2"
             className="h-60 md:h-96 w-full object-cover rounded-lg"
-          />
+          /> */}
+          <img src="./Hero slider.png" alt="Slide 1" className="rounded-lg" />
         </div>
-        <div className="h-full w-full">
+        {/* <div className="h-full w-full">
           <img
             src="./Cover6.jpg"
             alt="Slide 3"
             className="h-60 md:h-96 w-full object-cover rounded-lg"
           />
-        </div>
+        </div> */}
       </Carousel>
     </div>
   );

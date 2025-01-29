@@ -15,7 +15,8 @@ const Home = () => {
   return (
     <div className=" p-1 md:p-3">
       <Nav />
-      <div className="p-2 md:p-4 h-60 md:h-96 overflow-hidden">
+      {/* <div className="p-2 md:p-4 h-60 md:h-96"> */}
+      <div className="p-5">
         {/* <img src="./Cover.jpg" alt="" className="w-full h-full" /> */}
         <Carousal />
       </div>
