@@ -9,7 +9,7 @@ const Carousal = () => {
         showThumbs={false}
         showStatus={false}
         showIndicators={true}
-        autoPlay={true}
+        autoPlay={false}
         interval={5000}
         transitionTime={1000}
         stopOnHover={false}
@@ -19,23 +19,25 @@ const Carousal = () => {
       >
         <div className="h-full w-full">
           <img
-            src="./Cover.jpg"
+            src="./Hero slider.png"
             alt="Slide 1"
-            className="h-60 w-full object-cover rounded-lg"
+            className="h-60 md:h-[430px] w-full rounded-lg"
           />
+          {/* <img src="./Hero slider.png" alt="Slide 1" className="rounded-lg" /> */}
         </div>
         <div className="h-full w-full">
           <img
             src="./Cover10.jpg"
             alt="Slide 2"
-            className="h-60 w-full object-cover rounded-lg"
+            className="h-60 md:h-[430px] w-full object-cover rounded-lg"
           />
+          {/* <img src="./Hero slider.png" alt="Slide 1" className="rounded-lg" /> */}
         </div>
         <div className="h-full w-full">
           <img
             src="./Cover6.jpg"
             alt="Slide 3"
-            className="h-60 w-full object-cover rounded-lg"
+            className="h-60 md:h-[430px] w-full object-cover rounded-lg"
           />
         </div>
       </Carousel>

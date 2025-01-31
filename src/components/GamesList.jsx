@@ -5,8 +5,8 @@ import { useEffect, useState } from "react";
 import { mainState } from "../../context/mainContext";
 
 const GamesList = ({ name, data = [], show = false }) => {
-  const [count, setCount] = useState({ start: 0, end: 10 });
-  const [itemsPerPage, setItemsPerPage] = useState(10);
+  const [count, setCount] = useState({ start: 0, end: 7 });
+  const [itemsPerPage, setItemsPerPage] = useState(7);
   const { user, isOpen, setIsOpen } = mainState();
   const { setShowPopup } = mainState();
 
@@ -36,13 +36,13 @@ const GamesList = ({ name, data = [], show = false }) => {
         }
       } else {
         if (show) {
-          setItemsPerPage(20); // Show 4 items on mobile
+          setItemsPerPage(14); // Show 4 items on mobile
           setCount((prev) => ({
             ...prev,
-            end: 20,
+            end: 14,
           }));
         } else {
-          setItemsPerPage(10);
+          setItemsPerPage(7);
         }
         // Show 10 items on larger screens
       }
@@ -105,15 +105,11 @@ const GamesList = ({ name, data = [], show = false }) => {
       </div>
       <div
         onClick={onGameClick}
-        className=" h-32  grid md:grid-cols-10 grid-cols-4 gap-2 cursor-pointer"
+        className=" h-32  grid md:grid-cols-7 grid-cols-4 gap-2 md:gap-4 cursor-pointer"
       >
         {data.slice(count.start, count.end).map((ele, index) => (
-          <div key={index} className="w-full h-32">
-            <img
-              src={ele.image}
-              alt=""
-              className="w-full h-full object-cover rounded-md"
-            />
+          <div key={index} className="w-full h-32 md:h-44">
+            <img src={ele.image} alt="" className="w-full h-full  rounded-md" />
           </div>
         ))}
       </div>
