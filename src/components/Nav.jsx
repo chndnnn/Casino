@@ -40,14 +40,14 @@ const Nav = () => {
     setUser(data);
   }, []);
   const colors = [
-    "#ff00ff", // Neon Pink
-    "#00ffff", // Cyan
-    "#ff4500", // Orange Red
-    "#32cd32", // Lime Green
-    "#ffff00", // Yellow
-    "#ff1493", // Deep Pink
-    "#00ff7f", // Spring Green
-    "#1e90ff", // Dodger Blue
+    "#ff00ff", 
+    "#00ffff", 
+    "#ff4500", 
+    "#32cd32", 
+    "#ffff00", 
+    "#ff1493",
+    "#00ff7f", 
+    "#1e90ff", 
   ];
 
   const data = [
@@ -87,7 +87,6 @@ const Nav = () => {
           <img src="./logo2.jpg" alt="" className="h-full w-full rounded-sm" />
         </div>
 
-        {/* ecclipse */}
         <div className="md:hidden text-white bg-neutral-800 p-1 rounded flex items-center">
           <button onClick={toggleMenu} className="text-2xl">
             {menuOpen ? <MdClose /> : <MdMenu />}
