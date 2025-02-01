@@ -13,31 +13,34 @@ const Home = () => {
   let JackpotData = jackpot;
   let liveGameData = liveGames;
   return (
-    <div className=" p-1 md:p-3">
+    <div className=" p-1 md:">
       <Nav />
       {/* <div className="p-2 md:p-4 h-60 md:h-96"> */}
-      <div className="p-5">
+      <div className="p-5 mb-2">
         {/* <img src="./Cover.jpg" alt="" className="w-full h-full" /> */}
         <Carousal />
       </div>
-      <div className="p-2">
-        <div className="h-48 md:h-60 ">
-          <GamesList name={"Top Games"} data={data} />
+      <div className="p-5">
+        <div className="p-2 shadow-[-4px_4px_6px_rgba(0,20,255,0.2)]  md:mb-10 ">
+          <div className="h-48 md:h-60 ">
+            <GamesList name={"Top Games"} data={data} />
+          </div>
+          <div className="h-48 md:h-60 md:mb-3">
+            <GamesList name={"Jackpot Play"} data={JackpotData} />
+          </div>
         </div>
-        <div className="h-48 md:h-60 md:mb-5">
-          <GamesList name={"Jackpot Play"} data={JackpotData} />
+        <div className="h-96 md:h-[465px] border border-neutral-500 rounded p-2 bg-[#16122D] md:mb-10">
+          <GamesList name={"Live Casino"} data={liveGameData} show={true} />
         </div>
-        <div className="h-96 md:h-[480px] border border-blue-500 rounded p-2 bg-blue-950">
-          <GamesList name={"Live Games"} data={liveGameData} show={true} />
+
+        <div className=" md:mb-7">
+          <PromAndLastWinner />
         </div>
+        <div className="h-96 md:h-[465px] shadow-[-4px_4px_6px_rgba(0,20,255,0.2)]  rounded p-2 bg-black md:mb-14">
+          <GamesList name={"Casino Oyu"} data={poker} show={true} />
+        </div>
+        <GamesScreen />
       </div>
-      <div className="bg-gradient-to-r from-blue-800 via-neutral-900 to-black">
-        <PromAndLastWinner />
-      </div>
-      <div className="h-96 md:h-[480px] border rounded p-2 bg-black">
-        <GamesList name={"Casino Oyu"} data={poker} show={true} />
-      </div>
-      <GamesScreen />
       <Footer />
     </div>
   );

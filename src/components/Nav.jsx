@@ -40,14 +40,14 @@ const Nav = () => {
     setUser(data);
   }, []);
   const colors = [
-    "#ff00ff", // Neon Pink
-    "#00ffff", // Cyan
-    "#ff4500", // Orange Red
-    "#32cd32", // Lime Green
-    "#ffff00", // Yellow
-    "#ff1493", // Deep Pink
-    "#00ff7f", // Spring Green
-    "#1e90ff", // Dodger Blue
+    "#ff00ff",
+    "#00ffff",
+    "#ff4500",
+    "#32cd32",
+    "#ffff00",
+    "#ff1493",
+    "#00ff7f",
+    "#1e90ff",
   ];
 
   const data = [
@@ -80,14 +80,13 @@ const Nav = () => {
   }
 
   return (
-    <div className="w-full md:h-32 md:py-3 md:px-5  h-10 md:border-b-[3px] border-b-2 border-[#09a9d9] bg-gradient-to-r from-[#141c1e] to-[#0b2c55]">
+    <div className="w-full md:h-32 md:py-3 md:px-8  h-10 md:border-b-[3px] border-b-2 border-[#09a9d9] bg-gradient-to-r from-[#141c1e] to-[#0b2c55]">
       {/* Top Navbar */}
       <div className="w-full h-10 md:mb-5 flex  justify-between items-center px-2 md:px-8 ">
         <div className="h-[70%] w-[10%] md:w-[12%] hidden md:block">
           <img src="./logo2.jpg" alt="" className="h-full w-full rounded-sm" />
         </div>
 
-        {/* ecclipse */}
         <div className="md:hidden text-white bg-neutral-800 p-1 rounded flex items-center">
           <button onClick={toggleMenu} className="text-2xl">
             {menuOpen ? <MdClose /> : <MdMenu />}
@@ -126,13 +125,13 @@ const Nav = () => {
           </div>
           <PopupLogin>
             <div
-              className={`flex bg-gradient-to-r gap-1 from-blue-400 to-blue-400 p-1 px-3 rounded-sm text-white justify-center items-center ${
+              className={`flex bg-gradient-to-r h-8 gap-1 from-blue-400 to-blue-400 p-1 px-3 rounded-sm text-white justify-center items-center ${
                 user && "cursor-not-allowed"
               } `}
             >
-              <FaUser />
+              <FaUser className="text-[11px]" />
 
-              {user ? user : "login"}
+              <span className="text-[11px]">{user ? user : "login"}</span>
             </div>
           </PopupLogin>
           {user && (
