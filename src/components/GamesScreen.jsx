@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { mainState } from "../../context/mainContext";
 
 const GamesScreen = () => {
