@@ -21,7 +21,7 @@ const Carousal = () => {
           <img
             src="./Hero slider.png"
             alt="Slide 1"
-            className="h-60 md:h-[430px] w-full rounded-lg"
+            className="h-60 md:h-[430px] w-full "
           />
           {/* <img src="./Hero slider.png" alt="Slide 1" className="rounded-lg" /> */}
         </div>
@@ -29,7 +29,7 @@ const Carousal = () => {
           <img
             src="./Cover10.jpg"
             alt="Slide 2"
-            className="h-60 md:h-[430px] w-full object-cover rounded-lg"
+            className="h-60 md:h-[430px] w-full object-cover "
           />
           {/* <img src="./Hero slider.png" alt="Slide 1" className="rounded-lg" /> */}
         </div>
@@ -37,7 +37,7 @@ const Carousal = () => {
           <img
             src="./Cover6.jpg"
             alt="Slide 3"
-            className="h-60 md:h-[430px] w-full object-cover rounded-lg"
+            className="h-60 md:h-[430px] w-full object-cover "
           />
         </div>
       </Carousel>
