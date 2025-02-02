@@ -80,7 +80,7 @@ const GamesList = ({ name, data = [], show = false }) => {
       <div className="h-10  flex items-center justify-between px-2">
         <div className="flex text-white items-center gap-3">
           {name == "Live Casino" ? (
-            <MdDiamond className="text-red-500" />
+            <MdDiamond className="text-red-700" />
           ) : (
             <GoDotFill className="text-yellow-500" />
           )}
@@ -113,7 +113,7 @@ const GamesList = ({ name, data = [], show = false }) => {
         className=" h-32  grid md:grid-cols-7 grid-cols-4 gap-2 md:gap-4 cursor-pointer"
       >
         {data.slice(count.start, count.end).map((ele, index) => (
-          <div key={index} className="w-full h-32 md:h-44">
+          <div key={index} className="w-full h-32 md:h-[200px]">
             <img src={ele.image} alt="" className="w-full h-full  rounded-md" />
           </div>
         ))}
