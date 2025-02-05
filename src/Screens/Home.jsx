@@ -39,7 +39,13 @@ const Home = () => {
           <PromAndLastWinner />
         </div>
         <div className="h-96 md:h-[500px] shadow-[-4px_4px_6px_rgba(0,20,255,0.2)]  rounded p-2 bg-black md:mb-14">
-          <GamesList name={"Casino Oyu"} data={poker} show={true} />
+          <GamesList
+            name={"Casino Oyu"}
+            data={poker}
+            show={true}
+            size={true}
+            height={"190px"}
+          />
         </div>
         <GamesScreen />
       </div>
