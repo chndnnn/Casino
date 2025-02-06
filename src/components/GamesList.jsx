@@ -9,7 +9,7 @@ const GamesList = ({
   name,
   data = [],
   show = false,
-  height = "200px",
+  height = "200",
   size = false,
 }) => {
   const [count, setCount] = useState({ start: 0, end: 7 });
@@ -125,11 +125,15 @@ const GamesList = ({
       <div
         onClick={onGameClick}
         className={` h-32  grid ${
-          size ? "md:grid-cols-6" : "md:grid-cols-7"
-        } grid-cols-4 gap-2 md:gap-4 cursor-pointer`}
+          size ? "md:grid-cols-6 md:gap-y-10 md:gap-3" : "md:grid-cols-7"
+        } grid-cols-4 gap-2 md:gap-4 cursor-pointer `}
       >
         {data.slice(count.start, count.end).map((ele, index) => (
-          <div key={index} className={`w-full h-32 md:h-[${height}]`}>
+          <div
+            key={index}
+            className="w-full h-32 md:h-auto"
+            style={{ height: `${height}px` }}
+          >
             <img src={ele.image} alt="" className="w-full h-full  rounded-md" />
           </div>
         ))}

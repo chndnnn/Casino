@@ -33,6 +33,21 @@ import LV10 from "./../public/RectangleLV10.png";
 import LV11 from "./../public/RectangleLV11.png";
 import LV12 from "./../public/RectangleLV12.png";
 import LV13 from "./../public/RectangleLV13.png";
+import Rc1 from "./../public/RecOU1.png"
+import Rc2 from "./../public/RecOU2.png"
+import Rc3 from "./../public/RecOU3.png"
+import Rc4 from "./../public/RecOU4.png"
+import Rc5 from "./../public/RecOU5.png"
+import Rc6 from "./../public/RecOU6.png"
+import Rc7 from "./../public/RecOU7.png"
+import Rc8 from "./../public/RecOU8.png"
+import Rc9 from "./../public/RecOU9.png"
+import Rc10 from "./../public/RecOU10.png"
+import Rc11 from "./../public/RecOU11.png"
+import Rc12 from "./../public/RecOU12.png"
+
+
+
 
 export const games = [
     { image: image8 },
@@ -112,4 +127,20 @@ export const games = [
     { image: LV11 },
     { image: LV12 },
     { image: LV13 },
+  ]
+
+
+  export const OyuGames = [
+    { image: Rc1 },
+    { image: Rc2 },
+    { image: Rc3 },
+    { image: Rc4},
+    { image: Rc5 },
+    { image: Rc6 },
+    { image: Rc7 },
+    { image: Rc8 },
+    { image: Rc9 },
+    { image: Rc10 },
+    { image: Rc11 },
+    { image: Rc12 },
   ]

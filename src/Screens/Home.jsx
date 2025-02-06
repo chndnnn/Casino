@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { games, Poker, jackpot, liveGames } from "../../helpers/Data";
+import { games, Poker, jackpot, liveGames, OyuGames } from "../../helpers/Data";
 import Carousal from "../components/Carousel";
 import Footer from "../components/Footer";
 import GamesList from "../components/GamesList";
@@ -13,6 +13,7 @@ const Home = () => {
   let poker = Poker;
   let JackpotData = jackpot;
   let liveGameData = liveGames;
+  let Oyu_Games = OyuGames;
 
   return (
     <div className=" md:p-1">
@@ -38,13 +39,13 @@ const Home = () => {
         <div className="p-1 md:mb-7">
           <PromAndLastWinner />
         </div>
-        <div className="h-96 md:h-[500px] shadow-[-4px_4px_6px_rgba(0,20,255,0.2)]  rounded p-2 bg-black md:mb-14">
+        <div className="h-96 md:h-[470px] shadow-[-4px_4px_6px_rgba(0,20,255,0.2)]  rounded p-2 bg-black md:mb-14">
           <GamesList
             name={"Casino Oyu"}
-            data={poker}
+            data={Oyu_Games}
             show={true}
             size={true}
-            height={"190px"}
+            height="170"
           />
         </div>
         <GamesScreen />
