@@ -40,14 +40,14 @@ const Nav = () => {
     setUser(data);
   }, []);
   const colors = [
-    "#ff00ff", 
-    "#00ffff", 
-    "#ff4500", 
-    "#32cd32", 
-    "#ffff00", 
+    "#ff00ff",
+    "#00ffff",
+    "#ff4500",
+    "#32cd32",
+    "#ffff00",
     "#ff1493",
-    "#00ff7f", 
-    "#1e90ff", 
+    "#00ff7f",
+    "#1e90ff",
   ];
 
   const data = [
@@ -114,10 +114,10 @@ const Nav = () => {
         </div>
         {/* Desktop Icons */}
         <div className=" hidden md:flex  items-center  gap-4 ">
-          <FaWhatsapp className="text-xl text-green-500" />
-          <MdOutlineComputer className="text-xl text-red-500" />
+          <FaWhatsapp className="text-xl text-green-500 cursor-pointer" />
+          <MdOutlineComputer className="text-xl text-red-500 cursor-pointer" />
 
-          <MdDateRange className="text-xl text-yellow-400" />
+          <MdDateRange className="text-xl text-yellow-400 cursor-pointer" />
           <span className="text-neutral-400 text-sm">{`${formattedDate} ${formattedTime}`}</span>
           <div className="flex bg-gradient-to-b gap-1 cursor-pointer from-neutral-700 to-neutral-700 p-2 rounded-sm text-white justify-center items-center">
             <RiLoginCircleFill />
