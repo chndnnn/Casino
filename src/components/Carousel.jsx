@@ -1,7 +1,14 @@
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
+import { useEffect, useState } from "react";
 
 const Carousal = () => {
+  let [height, setHeight] = useState();
+  useEffect(() => {
+    let data = window.innerHeight;
+    setHeight(data);
+  }, []);
+
   return (
     <div className="w-full">
       <Carousel
@@ -21,7 +28,9 @@ const Carousal = () => {
           <img
             src="./Hero slider.png"
             alt="Slide 1"
-            className="h-60 md:h-[430px] w-full "
+            className={`h-60 ${
+              height > 1240 ? "md:h-[470px]" : "md:h-[430px]"
+            } w-full`}
           />
           {/* <img src="./Hero slider.png" alt="Slide 1" className="rounded-lg" /> */}
         </div>
@@ -29,7 +38,9 @@ const Carousal = () => {
           <img
             src="./Cover10.jpg"
             alt="Slide 2"
-            className="h-60 md:h-[430px] w-full object-cover "
+            className={`h-60 ${
+              height > 1240 ? "md:h-[470px]" : "md:h-[430px]"
+            } w-full`}
           />
           {/* <img src="./Hero slider.png" alt="Slide 1" className="rounded-lg" /> */}
         </div>
@@ -37,7 +48,9 @@ const Carousal = () => {
           <img
             src="./Cover6.jpg"
             alt="Slide 3"
-            className="h-60 md:h-[430px] w-full object-cover "
+            className={`h-60 ${
+              height > 1240 ? "md:h-[470px]" : "md:h-[430px]"
+            } w-full`}
           />
         </div>
       </Carousel>
