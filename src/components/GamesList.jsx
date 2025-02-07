@@ -9,7 +9,7 @@ const GamesList = ({
   name,
   data = [],
   show = false,
-  height = "200",
+  height = false,
   size = false,
 }) => {
   const [count, setCount] = useState({ start: 0, end: 7 });
@@ -131,8 +131,9 @@ const GamesList = ({
         {data.slice(count.start, count.end).map((ele, index) => (
           <div
             key={index}
-            className="w-full h-32 md:h-auto"
-            style={{ height: `${height}px` }}
+            className={`w-full h-32 ${
+              height ? "md:h-[165px]" : "md:h-[200px]"
+            }`}
           >
             <img src={ele.image} alt="" className="w-full h-full  rounded-md" />
           </div>
