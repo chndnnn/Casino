@@ -35,7 +35,7 @@ const PromAndLastWinner = () => {
         </div>
       </div>
       <div className="h-full  md:w-[40%]  flex flex-col">
-        <div className="h-7 text-white  flex md:justify-center items-center font-semibold">
+        <div className="h-8 text-white  flex md:justify-center md:items-start items-center font-semibold">
           Latest Winner
         </div>
         <div className="flex-1 grid grid-rows-6 gap-3 p-3 md:h-[570px] ">
