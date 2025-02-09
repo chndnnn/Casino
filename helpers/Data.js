@@ -45,6 +45,12 @@ import Rc9 from "./../public/RecOU9.png"
 import Rc10 from "./../public/RecOU10.png"
 import Rc11 from "./../public/RecOU11.png"
 import Rc12 from "./../public/RecOU12.png"
+import W1 from "./../public/Win1.png"
+import W2 from "./../public/Win2.png"
+import W3 from "./../public/Win3.png"
+import W4 from "./../public/Win4.png"
+import W5 from "./../public/Win5.png"
+import W6 from "./../public/Win6.png"
 
 
 
@@ -143,4 +149,13 @@ export const games = [
     { image: Rc10 },
     { image: Rc11 },
     { image: Rc12 },
+  ]
+
+  export const gamesWinner = [
+    { image: W1 },
+    { image: W2 },
+    { image: W3 },
+    { image: W4},
+    { image: W5 },
+    { image: W6 }
   ]
