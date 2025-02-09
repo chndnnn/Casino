@@ -132,7 +132,7 @@ const GamesList = ({
           <div
             key={index}
             className={`w-full h-32 ${
-              height ? "md:h-[165px]" : "md:h-[200px]"
+              height ? "md:h-[165px]" : "md:h-[230px]"
             }`}
           >
             <img src={ele.image} alt="" className="w-full h-full  rounded-md" />
