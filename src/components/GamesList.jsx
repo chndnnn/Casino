@@ -1,6 +1,5 @@
 import { GoDotFill } from "react-icons/go";
-import { FaArrowLeft } from "react-icons/fa";
-import { FaArrowRight } from "react-icons/fa";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import { useEffect, useState } from "react";
 import { mainState } from "../../context/mainContext";
 import { MdDiamond } from "react-icons/md";
@@ -14,6 +13,8 @@ const GamesList = ({
 }) => {
   const [count, setCount] = useState({ start: 0, end: 7 });
   const [itemsPerPage, setItemsPerPage] = useState(7);
+  const [dynamicHeight, setDynamicHeight] = useState("md:h-[200px]"); // Default height
+
   const { user, isOpen, setIsOpen } = mainState();
   const { setShowPopup } = mainState();
 
@@ -27,39 +28,22 @@ const GamesList = ({
 
   useEffect(() => {
     const handleResize = () => {
+      if (window.innerHeight > 650) {
+        setDynamicHeight("md:h-[250px]"); // Increase height
+      } else {
+        setDynamicHeight("md:h-[200px]"); // Default height
+      }
+
       if (window.innerWidth < 768) {
-        if (show) {
-          setItemsPerPage(8); // Show 4 items on mobile
-          setCount((prev) => ({
-            ...prev,
-            end: 8,
-          }));
-        } else {
-          setItemsPerPage(4); // Show 4 items on mobile
-          setCount((prev) => ({
-            ...prev,
-            end: 4,
-          }));
-        }
+        setItemsPerPage(show ? 8 : 4);
+        setCount((prev) => ({ ...prev, end: show ? 8 : 4 }));
       } else {
         if (show) {
-          if (size) {
-            setItemsPerPage(12);
-            setCount((prev) => ({
-              ...prev,
-              end: 12,
-            }));
-          } else {
-            setItemsPerPage(14); // Show 4 items on mobile
-            setCount((prev) => ({
-              ...prev,
-              end: 14,
-            }));
-          }
+          setItemsPerPage(size ? 12 : 14);
+          setCount((prev) => ({ ...prev, end: size ? 12 : 14 }));
         } else {
           setItemsPerPage(7);
         }
-        // Show 10 items on larger screens
       }
     };
 
@@ -69,7 +53,6 @@ const GamesList = ({
     return () => window.removeEventListener("resize", handleResize);
   }, [name]);
 
-  // Handle right arrow click
   const handleNext = () => {
     if (count.end < data.length) {
       setCount((prev) => ({
@@ -79,7 +62,6 @@ const GamesList = ({
     }
   };
 
-  // Handle left arrow click
   const handlePrev = () => {
     if (count.start > 0) {
       setCount((prev) => ({
@@ -90,10 +72,10 @@ const GamesList = ({
   };
 
   return (
-    <div className="w-full h-full  p-1 flex flex-col gap-2">
-      <div className="h-10  flex items-center justify-between px-2">
+    <div className="w-full h-full p-1 flex flex-col gap-2">
+      <div className="h-10 flex items-center justify-between px-2">
         <div className="flex text-white items-center gap-3">
-          {name == "Live Casino" ? (
+          {name === "Live Casino" ? (
             <MdDiamond className="text-red-700" />
           ) : (
             <GoDotFill className="text-yellow-500" />
@@ -124,18 +106,16 @@ const GamesList = ({
       </div>
       <div
         onClick={onGameClick}
-        className={` h-32  grid ${
+        className={`h-32 grid ${
           size ? "md:grid-cols-6 md:gap-y-10 md:gap-3" : "md:grid-cols-7"
-        } grid-cols-4 gap-2 md:gap-4 cursor-pointer `}
+        } grid-cols-4 gap-2 md:gap-4 cursor-pointer`}
       >
         {data.slice(count.start, count.end).map((ele, index) => (
           <div
             key={index}
-            className={`w-full h-32 ${
-              height ? "md:h-[165px]" : "md:h-[230px]"
-            }`}
+            className={`w-full h-32 ${height ? "md:h-[165px]" : dynamicHeight}`}
           >
-            <img src={ele.image} alt="" className="w-full h-full  rounded-md" />
+            <img src={ele.image} alt="" className="w-full h-full rounded-md" />
           </div>
         ))}
       </div>

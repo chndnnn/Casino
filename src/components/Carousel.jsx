@@ -28,7 +28,7 @@ const Carousal = () => {
           <img
             src="./Hero slider.png"
             alt="Slide 1"
-            className="h-60 md:h-[430px] 2xl:h-[530px] w-full object-cover "
+            className="h-60 md:h-[430px] 2xl:h-[530px] w-full md:object-cover "
           />
           {/* <img src="./Hero slider.png" alt="Slide 1" className="rounded-lg" /> */}
         </div>

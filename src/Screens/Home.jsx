@@ -14,6 +14,18 @@ const Home = () => {
   let JackpotData = jackpot;
   let liveGameData = liveGames;
   let Oyu_Games = OyuGames;
+  const [dynamicHeight, setDynamicHeight] = useState("md:h-[200px]");
+  const [dynamicHeightLive, setDynamicHeightLive] = useState("md:h-[200px]");
+
+  useEffect(() => {
+    if (window.innerHeight > 650) {
+      setDynamicHeight("md:h-[320px]");
+      setDynamicHeightLive("md:h-[600px]");
+    } else {
+      setDynamicHeight("md:h-[260px]");
+      setDynamicHeightLive("md:h-[520px]");
+    }
+  }, []);
 
   return (
     <div className=" md:p-1">
@@ -25,14 +37,16 @@ const Home = () => {
       </div>
       <div className="md:p-5 p-1">
         <div className="p-2 shadow-[-4px_4px_6px_rgba(0,20,255,0.2)]  md:mb-10 ">
-          <div className="h-48 md:h-[290px] ">
+          <div className={`h-48 ${dynamicHeight} `}>
             <GamesList name={"Top Games"} data={data} />
           </div>
-          <div className="h-48 md:h-[290px] md:mb-3">
+          <div className={`h-48 ${dynamicHeight} md:mb-3`}>
             <GamesList name={"Jackpot Play"} data={JackpotData} />
           </div>
         </div>
-        <div className="h-[360px] mb-3 md:h-[560px] border border-neutral-500 rounded p-2 bg-[#16122D] md:mb-10">
+        <div
+          className={`h-[360px] mb-3 ${dynamicHeightLive} border border-neutral-500 rounded p-2 bg-[#16122D] md:mb-10`}
+        >
           <GamesList name={"Live Casino"} data={liveGameData} show={true} />
         </div>
 
