@@ -21,7 +21,7 @@ const PromAndLastWinner = () => {
             </div>
           </div>
         </div>
-        <div className="grid grid-rows-2 h-64 md:h-[570px] gap-2">
+        <div className="grid grid-rows-2 h-96 md:h-[570px] gap-2">
           <img
             src="./Promo.png"
             alt=""
@@ -40,7 +40,7 @@ const PromAndLastWinner = () => {
         </div>
         <div className="flex-1 grid grid-rows-6 gap-3 p-3 md:h-[570px] ">
           {gamesWinners.map((ele, i) => (
-            <Winner image={ele.image} />
+            <Winner key={i} image={ele.image} />
           ))}
         </div>
       </div>
