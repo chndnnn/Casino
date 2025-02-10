@@ -29,7 +29,7 @@ const GamesList = ({
   useEffect(() => {
     const handleResize = () => {
       if (window.innerHeight > 650) {
-        setDynamicHeight("md:h-[280px]"); // Increase height
+        setDynamicHeight("md:h-[250px]"); // Increase height
       } else {
         setDynamicHeight("md:h-[200px]"); // Default height
       }
