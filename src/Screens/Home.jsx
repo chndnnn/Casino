@@ -40,7 +40,7 @@ const Home = () => {
           <div className={`h-48 ${dynamicHeight} `}>
             <GamesList name={"Top Games"} data={data} />
           </div>
-          <div className={`h-48 ${dynamicHeight} md:mb-3`}>
+          <div className={`h-48 ${dynamicHeight} md:mb-3 `}>
             <GamesList name={"Jackpot Play"} data={JackpotData} />
           </div>
         </div>
