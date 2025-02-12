@@ -54,58 +54,70 @@ const PopupLogin = ({ children }) => {
 
       {isOpen && (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-60 z-10">
-          <div className="bg-neutral-900 text-white p-8 rounded-lg shadow-lg w-full max-w-sm relative">
-            <h2 className="text-2xl font-semibold text-center mb-6">Login</h2>
-
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <div className="relative">
-                <FaUser className="absolute left-3 top-3 text-gray-400" />
-                <input
-                  type="text"
-                  name="username"
-                  placeholder="Username"
-                  value={formData.username}
-                  onChange={handleChange}
-                  className="w-full pl-10 pr-4 py-2 bg-neutral-800 border border-neutral-700 rounded focus:ring-2 focus:ring-purple-600 outline-none"
-                  required
-                />
+          <div className="bg-neutral-900 text-white p-1 rounded-lg border h-80 shadow-lg w-full max-w-xl  relative flex gap-2">
+            <div className="border w-[40%]">Hiii</div>
+            <div>
+              <div className=" flex gap-2 mt-2">
+                <h2 className=" font-semibold text-center mb-6 border-b cursor-pointer">
+                  Login
+                </h2>
+                <h2 className="font-semibold text-center mb-6 border-b cursor-pointer">
+                  Signup
+                </h2>
               </div>
 
-              <div className="relative">
-                <FaLock className="absolute left-3 top-3 text-gray-400" />
-                <input
-                  type={showPassword ? "text" : "password"}
-                  name="password"
-                  placeholder="Password"
-                  value={formData.password}
-                  onChange={handleChange}
-                  className="w-full pl-10 pr-10 py-2 bg-neutral-800 border border-neutral-700 rounded focus:ring-2 focus:ring-purple-600 outline-none"
-                  required
-                />
-                <span
-                  className="absolute right-3 top-3 cursor-pointer text-gray-400 hover:text-white"
-                  onClick={() => setShowPassword(!showPassword)}
+              <form onSubmit={handleSubmit} className="space-y-4">
+                <div className="relative">
+                  <FaUser className="absolute left-3 top-3 text-gray-400" />
+                  <input
+                    type="text"
+                    name="username"
+                    placeholder="Username"
+                    value={formData.username}
+                    onChange={handleChange}
+                    className="w-full pl-10 pr-4 py-2 bg-neutral-800 border border-neutral-700 rounded focus:ring-2 focus:ring-purple-600 outline-none"
+                    required
+                  />
+                </div>
+
+                <div className="relative">
+                  <FaLock className="absolute left-3 top-3 text-gray-400" />
+                  <input
+                    type={showPassword ? "text" : "password"}
+                    name="password"
+                    placeholder="Password"
+                    value={formData.password}
+                    onChange={handleChange}
+                    className="w-full pl-10 pr-10 py-2 bg-neutral-800 border border-neutral-700 rounded focus:ring-2 focus:ring-purple-600 outline-none"
+                    required
+                  />
+                  <span
+                    className="absolute right-3 top-3 cursor-pointer text-gray-400 hover:text-white"
+                    onClick={() => setShowPassword(!showPassword)}
+                  >
+                    {showPassword ? <FaEyeSlash /> : <FaEye />}
+                  </span>
+                </div>
+
+                {invalid && (
+                  <span className="text-red-500">Invalid Cred!!</span>
+                )}
+
+                <button
+                  type="submit"
+                  className="w-full py-2 bg-purple-600 hover:bg-purple-700 rounded-md shadow-md transition-all"
                 >
-                  {showPassword ? <FaEyeSlash /> : <FaEye />}
-                </span>
-              </div>
-
-              {invalid && <span className="text-red-500">Invalid Cred!!</span>}
+                  Login
+                </button>
+              </form>
 
               <button
-                type="submit"
-                className="w-full py-2 bg-purple-600 hover:bg-purple-700 rounded-md shadow-md transition-all"
+                onClick={closPopUp}
+                className="absolute top-2 right-3 text-gray-400 hover:text-white text-xl"
               >
-                Login
+                &times;
               </button>
-            </form>
-
-            <button
-              onClick={closPopUp}
-              className="absolute top-3 right-3 text-gray-400 hover:text-white text-xl"
-            >
-              &times;
-            </button>
+            </div>
           </div>
         </div>
       )}
