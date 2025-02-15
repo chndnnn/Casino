@@ -1,4 +1,5 @@
 import Nav from "../components/Nav";
+import Accounts from "../components/profile/Accounts";
 import SideBar from "../components/SideBar";
 
 const ProfileScreen = () => {
@@ -11,7 +12,7 @@ const ProfileScreen = () => {
           <SideBar />
         </div>
         <div className="w-[75%] bg-neutral-900 text-white p-6">
-          <h1 className="text-2xl font-semibold">Profile Content</h1>
+          <Accounts />
         </div>
       </div>
     </div>
