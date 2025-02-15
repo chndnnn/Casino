@@ -4,7 +4,7 @@ const SideBar = () => {
   return (
     <div className="flex h-full flex-col border-e bg-black text-white">
       {/* Profile Section (Fixed Height) */}
-      <div className="h-24 flex items-center justify-center ">
+      <div className="h-24 flex items-center justify-center  mt-4">
         <img
           alt="User"
           src="https://images.unsplash.com/photo-1600486913747-55e5470d6f40?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
