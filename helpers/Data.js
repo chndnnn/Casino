@@ -51,6 +51,13 @@ import W3 from "./../public/Win3.png"
 import W4 from "./../public/Win4.png"
 import W5 from "./../public/Win5.png"
 import W6 from "./../public/Win6.png"
+import depo1 from "./../public/depo1.png"
+import depo2 from "./../public/depo2.png"
+import depo3 from "./../public/depo3.png"
+import depo4 from "./../public/depo4.png"
+import depo5 from "./../public/depo5.png"
+import depo6 from "./../public/depo6.png"
+
 
 
 
@@ -158,4 +165,13 @@ export const games = [
     { image: W4},
     { image: W5 },
     { image: W6 }
+  ]
+
+  export const depoData = [
+     {image :depo1,min:'100',max:'5000'},
+     {image :depo2,min:'100',max:'5000'},
+     {image :depo3,min:'10',max:'5000'},
+     {image :depo4,min:'50',max:'5000'},
+     {image :depo5,min:'100',max:'5000'},
+     {image :depo6,min:'100',max:'5000'}
   ]
