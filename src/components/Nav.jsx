@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { FaWhatsapp } from "react-icons/fa";
 import {
   MdOutlineComputer,
@@ -6,7 +6,6 @@ import {
   MdMenu,
   MdClose,
 } from "react-icons/md";
-import { IoIosLogOut } from "react-icons/io";
 import { FaUser } from "react-icons/fa";
 import { LuCherry } from "react-icons/lu";
 import { IoAmericanFootballSharp } from "react-icons/io5";
@@ -15,9 +14,8 @@ import { MdCasino } from "react-icons/md";
 import { FaTelegram } from "react-icons/fa";
 import PopupLogin from "./Login";
 import { mainState } from "../../context/mainContext";
-import { CiLogin } from "react-icons/ci";
 import { RiLoginCircleFill } from "react-icons/ri";
-import DropDown from "./DropDown";
+import { useNavigate } from "react-router-dom";
 
 const Nav = () => {
   const now = new Date();
@@ -34,6 +32,7 @@ const Nav = () => {
   });
   const [menuOpen, setMenuOpen] = useState(false);
   let { setIsOpen, user, setUser } = mainState();
+  let nav = useNavigate();
 
   useEffect(() => {
     let data = localStorage.getItem("token");
@@ -70,13 +69,11 @@ const Nav = () => {
   };
 
   function onLonginCLick() {
-    console.log("hii");
-    setIsOpen(true);
-  }
-
-  function onlogoutClick() {
-    localStorage.removeItem("token");
-    setUser("");
+    if (user) {
+      nav("/profile");
+    } else {
+      setIsOpen(true);
+    }
   }
 
   return (
@@ -105,10 +102,15 @@ const Nav = () => {
           <div className=" bg-blue-600 p-1 rounded text-white justify-center items-center">
             <PopupLogin />
             {/* {user ? <FaUser /> : <RiLoginCircleFill onClick={onLonginCLick} />} */}
-            {user ? (
+            {/* {user ? (
               <DropDown />
             ) : (
               <RiLoginCircleFill onClick={onLonginCLick} />
+            )} */}
+            {!user ? (
+              <RiLoginCircleFill onClick={onLonginCLick} />
+            ) : (
+              <FaUser onClick={onLonginCLick} />
             )}
           </div>
         </div>
@@ -125,24 +127,15 @@ const Nav = () => {
           </div>
           <PopupLogin>
             <div
-              className={`flex bg-gradient-to-r h-8 gap-1 from-blue-400 to-blue-400 p-1 px-3 rounded-sm text-white justify-center items-center ${
-                user && "cursor-not-allowed"
-              } `}
+              className={`flex bg-gradient-to-r h-8 gap-1 from-blue-400 to-blue-400 p-1 px-3 rounded-sm text-white justify-center items-center 
+               `}
             >
               <FaUser className="text-[11px]" />
 
               <span className="text-[11px]">{user ? user : "login"}</span>
             </div>
           </PopupLogin>
-          {user && (
-            <div
-              onClick={onlogoutClick}
-              className="flex bg-gradient-to-r cursor-pointer from-red-800 to-red-950 p-1 rounded text-white justify-center items-center"
-            >
-              <IoIosLogOut />
-              logout
-            </div>
-          )}
+
           <div className="flex h-5 w-5 cursor-point rounded text-white justify-center items-center">
             <img src="./china.png" alt="" className="w-full h-full" />
           </div>

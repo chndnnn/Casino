@@ -3,6 +3,7 @@ import { FaUser, FaLock, FaEye, FaEyeSlash } from "react-icons/fa";
 import { loginData } from "../../helpers/logindata";
 import { mainState } from "../../context/mainContext";
 import { FaAt } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 const PopupLogin = ({ children }) => {
   const { isOpen, setIsOpen } = mainState();
@@ -12,6 +13,7 @@ const PopupLogin = ({ children }) => {
   const [showLogin, setShowLogin] = useState(true);
   let { user, setUser } = mainState();
   let data = loginData;
+  let nav = useNavigate();
 
   function clearData() {
     setFormData({ username: "", password: "" });
@@ -21,6 +23,8 @@ const PopupLogin = ({ children }) => {
   const togglePopup = () => {
     if (!user) {
       setIsOpen(true);
+    } else {
+      nav("/profile");
     }
   };
 
