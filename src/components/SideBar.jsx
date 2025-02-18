@@ -1,7 +1,7 @@
 import { RiAdminFill } from "react-icons/ri";
 import { FaPlusCircle } from "react-icons/fa";
 import { FaCircleMinus } from "react-icons/fa6";
-import { MdAssessment } from "react-icons/md";
+import { IoTimerSharp } from "react-icons/io5";
 import { IoGiftSharp } from "react-icons/io5";
 import { BsBox2Fill } from "react-icons/bs";
 import { FaMoneyCheckAlt } from "react-icons/fa";
@@ -17,12 +17,12 @@ const SideBar = ({ setScreenName, screenName }) => {
     { name: "Bonus", logo: <IoGiftSharp /> },
     { name: "Game History", logo: <BsBox2Fill /> },
     { name: "Finance History", logo: <FaMoneyCheckAlt /> },
-    { name: "Session History", logo: <MdAssessment /> },
+    { name: "Session History", logo: <IoTimerSharp /> },
     { name: "Security", logo: <IoKeySharp /> },
     { name: "Logout", logo: <RiLogoutCircleRFill /> },
   ];
   return (
-    <div className="flex h-full flex-col border-e bg-black text-white">
+    <div className="flex h-full flex-col  bg-black text-white">
       {/* Profile Section (Fixed Height) */}
       <div className="h-24 flex items-center justify-center  mt-4">
         <img
@@ -38,13 +38,13 @@ const SideBar = ({ setScreenName, screenName }) => {
       </div>
 
       <div className="flex flex-1  flex-col justify-start gap-4 overflow-y-auto">
-        <div className=" w-[90%] ml-auto">
+        <div className=" md:w-[90%] ml-auto">
           {data.map((item) => (
             <span
               key={item}
               className={`flex items-center gap-5 justify-end ${
                 screenName == item.name && "bg-[#09a9d9]"
-              } p-2 px-14  uppercase cursor-pointer`}
+              } p-2 px-14  uppercase cursor-pointer hover:scale-95`}
               onClick={() => setScreenName(item.name)}
             >
               {item.name}
