@@ -73,7 +73,7 @@ const GamesList = ({
 
   return (
     <div className="w-full h-full p-1 flex flex-col gap-2">
-      <div className="h-10 flex items-center justify-between px-2">
+      <div className="h-10 flex items-center justify-between px-2 ">
         <div className="flex text-white items-center gap-3">
           {name === "Live Casino" ? (
             <MdDiamond className="text-red-700" />
@@ -99,7 +99,7 @@ const GamesList = ({
           </div>
         </div>
         <div>
-          <div className="text-white text-sm bg-neutral-700 rounded px-2 border">
+          <div className="text-white text-sm border bg-neutral-700 rounded px-2">
             View All
           </div>
         </div>
@@ -113,7 +113,9 @@ const GamesList = ({
         {data.slice(count.start, count.end).map((ele, index) => (
           <div
             key={index}
-            className={`w-full h-32 ${height ? "md:h-[165px]" : dynamicHeight}`}
+            className={`w-full h-32 ${
+              height ? "md:h-[165px]" : dynamicHeight
+            } object-cover`}
           >
             <img src={ele.image} alt="" className="w-full h-full rounded-md" />
           </div>
