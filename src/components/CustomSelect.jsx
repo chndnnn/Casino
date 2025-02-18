@@ -1,14 +1,14 @@
 const CustomSelect = () => {
   return (
     <div>
-      <label htmlFor="HeadlineAct" className=" text-white">
+      <label htmlFor="HeadlineAct" className="text-neutral-200">
         Transaction Type
       </label>
 
       <select
         name="HeadlineAct"
         id="HeadlineAct"
-        className="mt-1 w-full h-10 rounded bg-black  border border-[#4a757e] text-gray-300 sm:text-sm"
+        className="mt-1 w-full h-10 rounded bg-black  border border-[#09a9d9] text-gray-300 sm:text-sm"
       >
         <option value="">Deposit</option>
         <option value="JM">Chandan</option>
