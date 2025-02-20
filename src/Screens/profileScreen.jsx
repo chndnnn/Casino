@@ -38,7 +38,7 @@ const ProfileScreen = () => {
         {isSidebarOpen ? <FaWindowClose /> : <GrDatabase />}
       </button>
 
-      <div className="flex flex-1 overflow-hidden">
+      <div className="flex flex-1 overflow-hidden ">
         {/* Sidebar (Collapsible for Mobile) */}
         <div
           className={`fixed md:relative top-0 left-0 h-full w-64 bg-black text-white p-4 transition-transform duration-300 md:w-[30%] ${
@@ -53,7 +53,7 @@ const ProfileScreen = () => {
         </div>
 
         {/* Main Content */}
-        <div className="flex-1 overflow-y-auto text-white p-4 md:p-6">
+        <div className="flex-1 overflow-y-auto text-white p-4 md:p-6 ">
           {screenName === "Account" && <Accounts />}
           {screenName === "Deposit" && <Deposite />}
           {screenName === "Withdraw" && <WithDraw />}
