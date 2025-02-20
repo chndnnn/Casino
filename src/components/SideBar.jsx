@@ -40,29 +40,29 @@ const SideBar = ({ setScreenName, screenName, setIsSidebarOpen }) => {
   }
 
   return (
-    <div className="flex h-full flex-col  bg-black text-white">
+    <div className="flex h-full flex-col bg-black text-white">
       {/* Profile Section (Fixed Height) */}
       <div className="h-24 flex items-center justify-center  mt-4">
         <img
           alt="User"
           src="https://images.unsplash.com/photo-1600486913747-55e5470d6f40?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
-          className="size-16 rounded-full object-cover"
+          className="size-16 md:size-20 rounded-full object-cover"
         />
         <div className="ml-3">
-          <p className="text-sm font-medium uppercase">{user}</p>
+          <p className="text-blue-100 font-medium uppercase">{user}</p>
           <p className="text-xs text-gray-500 uppercase">CCDC</p>
           <p className="text-xs text-gray-500 uppercase">000 TRY</p>
         </div>
       </div>
 
-      <div className="flex flex-1  flex-col justify-start gap-4 overflow-y-auto">
-        <div className=" md:w-[90%]  ml-auto">
+      <div className="flex flex-1  flex-col gap-4 overflow-y-auto mt-7">
+        <div className=" md:w-[90%]  h-full  ml-auto">
           {data.map((item) => (
             <span
               key={item}
               className={` flex items-center gap-5 justify-end ${
                 screenName == item.name && "bg-[#09a9d9]"
-              } p-2 md:px-14  uppercase cursor-pointer hover:scale-95`}
+              } p-2 md:px-14  uppercase cursor-pointer hover:scale-95 font-semibold`}
               onClick={() => onMenuClick(item.name)}
             >
               {item.name}
