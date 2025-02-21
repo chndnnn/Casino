@@ -34,6 +34,9 @@ const Nav = () => {
   let { setIsOpen, user, setUser } = mainState();
   let nav = useNavigate();
 
+  function onDataClick() {
+    nav("/");
+  }
   useEffect(() => {
     let data = localStorage.getItem("token");
     setUser(data);
@@ -150,6 +153,7 @@ const Nav = () => {
               const glowingColor = colors[index % colors.length];
               return (
                 <div
+                  onClick={onDataClick}
                   key={index}
                   className="bg-gradient-to-b from-neutral-800 to-black h-40 flex flex-col justify-center items-center gap-3 rounded-lg  shadow-lg"
                 >
@@ -174,7 +178,11 @@ const Nav = () => {
 
       <div className=" hidden md:flex   md:px-8  w-full h-10   items-center gap-6 ">
         {data.map((ele, i) => (
-          <div key={i} className="flex items-center gap-1  cursor-pointer ">
+          <div
+            key={i}
+            onClick={onDataClick}
+            className="flex items-center gap-1  cursor-pointer "
+          >
             <span
               className={`text-neutral-400 text-[15px] ${
                 i == 2 && "bg-orange-500 text-white"
