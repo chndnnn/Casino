@@ -5,10 +5,8 @@ import { IoTimerSharp } from "react-icons/io5";
 import { IoGiftSharp } from "react-icons/io5";
 import { BsBox2Fill } from "react-icons/bs";
 import { FaMoneyCheckAlt } from "react-icons/fa";
-
 import { IoKeySharp } from "react-icons/io5";
 import { RiLogoutCircleRFill } from "react-icons/ri";
-import { useEffect, useState } from "react";
 import { mainState } from "../../context/mainContext";
 import { useNavigate } from "react-router-dom";
 
@@ -40,7 +38,7 @@ const SideBar = ({ setScreenName, screenName, setIsSidebarOpen }) => {
   }
 
   return (
-    <div className="flex h-full flex-col bg-black text-white">
+    <div className="flex h-full flex-col  bg-[#0c1416] md:border-r-2 border-[#09a9d9] text-white">
       {/* Profile Section (Fixed Height) */}
       <div className="h-24 flex items-center justify-center  mt-4">
         <img
@@ -60,14 +58,13 @@ const SideBar = ({ setScreenName, screenName, setIsSidebarOpen }) => {
           {data.map((item) => (
             <span
               key={item}
-              className={` flex items-center gap-5 justify-end ${
+              className={` flex items-center gap-8 justify-end ${
                 screenName == item.name && "bg-[#09a9d9]"
               } p-2 md:px-14  uppercase cursor-pointer hover:scale-95 font-semibold`}
               onClick={() => onMenuClick(item.name)}
             >
               {item.name}
               {item.logo}
-              {/* <RiAdminFill /> */}
             </span>
           ))}
         </div>

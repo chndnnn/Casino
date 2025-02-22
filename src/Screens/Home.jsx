@@ -30,9 +30,7 @@ const Home = () => {
   return (
     <div className=" md:p-1">
       <Nav />
-      {/* <div className="p-2 md:p-4 h-60 md:h-96"> */}
       <div className="p-5 mb-2">
-        {/* <img src="./Cover.jpg" alt="" className="w-full h-full" /> */}
         <Carousal />
       </div>
       <div className="md:p-5 p-1">

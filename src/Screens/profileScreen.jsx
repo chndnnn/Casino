@@ -29,8 +29,6 @@ const ProfileScreen = () => {
   return (
     <div className="h-screen bg-gradient-to-r from-black via-neutral-900 to-[#0e3246] flex flex-col">
       <Nav />
-
-      {/* Mobile Sidebar Toggle Button */}
       <button
         className="md:hidden  ml-auto text-white p-2 m-2 bg-[#09a9d9] rounded-md"
         onClick={() => setIsSidebarOpen(!isSidebarOpen)}
@@ -39,7 +37,6 @@ const ProfileScreen = () => {
       </button>
 
       <div className="flex flex-1 overflow-hidden ">
-        {/* Sidebar (Collapsible for Mobile) */}
         <div
           className={`fixed md:relative top-0 left-0 h-full w-64 bg-black text-white p-4 transition-transform duration-300 md:w-[30%] ${
             isSidebarOpen ? "translate-x-0 z-10" : "-translate-x-full"
@@ -51,8 +48,6 @@ const ProfileScreen = () => {
             setIsSidebarOpen={setIsSidebarOpen}
           />
         </div>
-
-        {/* Main Content */}
         <div className="flex-1 overflow-y-auto text-white p-4 md:p-6 ">
           {screenName === "Account" && <Accounts />}
           {screenName === "Deposit" && <Deposite />}
