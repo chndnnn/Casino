@@ -27,7 +27,7 @@ const ProfileScreen = () => {
   }, []);
 
   return (
-    <div className="h-screen bg-gradient-to-r from-black via-neutral-900 to-[#0e3246] flex flex-col">
+    <div className="h-screen bg-gradient-to-r from-[#082857] to-[#101618] flex flex-col">
       <Nav />
       <button
         className="md:hidden  ml-auto text-white p-2 m-2 bg-[#09a9d9] rounded-md"
