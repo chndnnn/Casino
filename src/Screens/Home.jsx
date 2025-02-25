@@ -4,13 +4,11 @@ import Carousal from "../components/Carousel";
 import Footer from "../components/Footer";
 import GamesList from "../components/GamesList";
 import GamesScreen from "../components/GamesScreen";
-import PopupLogin from "../components/Login";
 import Nav from "../components/Nav";
 import PromAndLastWinner from "../components/PromAndLastWinner";
 
 const Home = () => {
   let data = games;
-  let poker = Poker;
   let JackpotData = jackpot;
   let liveGameData = liveGames;
   let Oyu_Games = OyuGames;

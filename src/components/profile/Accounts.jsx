@@ -10,7 +10,7 @@ const AccountSettings = () => {
       </div>
 
       {/* Form Fields */}
-      <div className="mt-4 space-y-4 px-2 bg-black pb-16 pr-10">
+      <div className="mt-4 space-y-4 px-2 bg-[#0d181a] pb-16 pr-10">
         {/* Name */}
         <div className="flex flex-col">
           <label className="text-sm font-medium mb-1 text-neutral-400">
@@ -18,7 +18,7 @@ const AccountSettings = () => {
           </label>
           <input
             type="text"
-            className="w-full p-2 border bg-black border-[#09a9d9]"
+            className="w-full p-2 border bg-black border-blue-700"
           />
         </div>
 
@@ -29,7 +29,7 @@ const AccountSettings = () => {
           </label>
           <input
             type="text"
-            className="w-full p-2 border bg-black border-[#09a9d9] "
+            className="w-full p-2 border bg-black border-blue-700 "
           />
         </div>
 
@@ -40,7 +40,7 @@ const AccountSettings = () => {
           </label>
           <input
             type="email"
-            className="w-full p-2 border bg-black border-[#09a9d9]"
+            className="w-full p-2 border bg-black border-blue-700"
           />
         </div>
 
@@ -51,7 +51,7 @@ const AccountSettings = () => {
           </label>
           <input
             type="tel"
-            className="w-full p-2 border bg-black border-[#09a9d9]"
+            className="w-full p-2 border bg-black border-blue-700"
           />
         </div>
       </div>
