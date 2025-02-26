@@ -3,15 +3,11 @@ import { TbSettingsStar } from "react-icons/tb";
 const AccountSettings = () => {
   return (
     <div className=" p-4">
-      {/* Header */}
       <div className="flex items-center  text-2xl gap-5 p-2">
         <TbSettingsStar />
         ACCOUNT
       </div>
-
-      {/* Form Fields */}
       <div className="mt-4 space-y-4 px-2 bg-[#0d181a] pb-16 pr-10">
-        {/* Name */}
         <div className="flex flex-col">
           <label className="text-sm font-medium mb-1 text-neutral-400">
             Name
@@ -21,8 +17,6 @@ const AccountSettings = () => {
             className="w-full p-2 border bg-black border-blue-700"
           />
         </div>
-
-        {/* Surname */}
         <div className="flex flex-col">
           <label className="text-sm font-medium mb-1 text-neutral-400">
             Surname
@@ -33,7 +27,6 @@ const AccountSettings = () => {
           />
         </div>
 
-        {/* Email */}
         <div className="flex flex-col">
           <label className="text-sm font-medium  mb-1 text-neutral-400">
             Email
@@ -44,7 +37,6 @@ const AccountSettings = () => {
           />
         </div>
 
-        {/* Phone */}
         <div className="flex flex-col">
           <label className="text-sm font-medium  mb-1 text-neutral-400">
             Phone
