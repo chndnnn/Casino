@@ -38,7 +38,7 @@ const ProfileScreen = () => {
 
       <div className="flex flex-1 overflow-hidden ">
         <div
-          className={`fixed md:relative top-0 left-0 h-full w-64 bg-black text-white p-4 transition-transform duration-300 md:w-[30%] ${
+          className={`fixed md:relative top-0 left-0 h-full w-64 bg-black text-white  transition-transform duration-300 md:w-[30%] ${
             isSidebarOpen ? "translate-x-0 z-10" : "-translate-x-full"
           } md:translate-x-0`}
         >
